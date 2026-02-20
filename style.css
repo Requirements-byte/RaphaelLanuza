@@ -1,0 +1,206 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #050b16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===== TECH BACKGROUND ===== */
+body::before {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  left: -150px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, #00eaff 0%, transparent 60%);
+  filter: blur(45px);
+  opacity: 0.9;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.2;
+}
+
+/* ===== WRAPPER ===== */
+.wrapper {
+  width: 900px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== GLASS CONTAINER ===== */
+.login-container {
+  display: flex;
+  border-radius: 14px;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  background: rgba(0, 25, 50, 0.75);
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  box-shadow: 0 0 35px rgba(0, 200, 255, 0.25);
+}
+
+/* ===== LEFT PANEL ===== */
+.login-left {
+  width: 50%;
+  padding: 45px 40px;
+}
+
+/* avatar circle */
+.avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  font-size: 24px;
+  color: #00eaff;
+  border: 1px solid rgba(0,255,255,0.4);
+  box-shadow: 0 0 20px rgba(0,255,255,0.4);
+}
+
+.login-left h1 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 25px;
+}
+
+/* ===== INPUTS ===== */
+.input-wrapper {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.input-wrapper label {
+  font-size: 12px;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 12px 12px 12px 38px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.35);
+  color: white;
+  outline: none;
+}
+
+.input-wrapper input:focus {
+  border-color: #00eaff;
+  box-shadow: 0 0 8px rgba(0,255,255,0.5);
+}
+
+.input-wrapper .icon {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  opacity: 0.6;
+}
+
+/* ===== BUTTON ===== */
+#loginBtn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #00eaff, #007bff);
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.25s;
+}
+
+#loginBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(0,255,255,0.6);
+}
+
+/* ===== SOCIAL ===== */
+.social-login {
+  margin-top: 28px;
+  display: flex;
+  gap: 14px;
+}
+
+.social-login a {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,255,255,0.08);
+  border: 1px solid rgba(0,255,255,0.25);
+  color: #00eaff;
+  transition: 0.2s;
+}
+
+.social-login a:hover {
+  background: #00eaff;
+  color: black;
+}
+
+/* ===== RIGHT PANEL ===== */
+.login-right {
+  width: 50%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-right img {
+  width: 85%;
+  filter: drop-shadow(0 0 25px rgba(0,255,255,0.4));
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 850px) {
+  .wrapper {
+    width: 95%;
+  }
+
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-left,
+  .login-right {
+    width: 100%;
+  }
+
+  .login-right {
+    padding: 20px;
+  }
+}
